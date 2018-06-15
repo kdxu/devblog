@@ -4704,13 +4704,12 @@ gatsby-remark-images@^1.5.36:
     slash "^1.0.0"
     unist-util-select "^1.5.0"
 
-gatsby-remark-prismjs@^1.2.11:
-  version "1.2.23"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.23.tgz#49cd63f5b0977bf8ead13649d26f6f2d03c48fe8"
+gatsby-remark-prismjs@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-2.0.3.tgz#0a3414e3c2c822b3010807acd9ac190546113c23"
   dependencies:
     babel-runtime "^6.26.0"
     parse-numeric-range "0.0.2"
-    prismjs "^1.12.2"
     unist-util-visit "^1.3.0"
 
 gatsby-remark-responsive-iframe@^1.4.16:
@@ -4739,9 +4738,9 @@ gatsby-source-filesystem@^1.5.11:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
-gatsby-transformer-remark@^1.7.26:
-  version "1.7.39"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.39.tgz#1a3e2fcba317c379466ed39cfb1273c5b2737c62"
+gatsby-transformer-remark@^1.7.43:
+  version "1.7.43"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.43.tgz#7642aa1912b41017cbf2634f9356efb1aa904736"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
@@ -9166,9 +9165,9 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
-prismjs@^1.12.2:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.13.0.tgz#edcc14a90bbd72a03e5ffd2bab81a04c79a607a6"
+prismjs@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.14.0.tgz#bbccfdb8be5d850d26453933cb50122ca0362ae0"
   optionalDependencies:
     clipboard "^2.0.0"
 

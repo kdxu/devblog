@@ -1,21 +1,10 @@
 import React, { Component } from "react";
 import {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
   TwitterShareButton,
-  TelegramShareButton,
   RedditShareButton,
-  FacebookShareCount,
-  GooglePlusShareCount,
-  LinkedinShareCount,
-  RedditShareCount,
-  FacebookIcon,
   TwitterIcon,
-  TelegramIcon,
-  GooglePlusIcon,
-  LinkedinIcon,
-  RedditIcon
+  RedditIcon,
+  RedditShareCount
 } from "react-share";
 import config from "../../../data/SiteConfig";
 import "./SocialLinks.scss";
@@ -36,34 +25,9 @@ class SocialLinks extends Component {
             {count => <div className="share-count">{filter(count)}</div>}
           </RedditShareCount>
         </RedditShareButton>
-        <TwitterShareButton url={url} title={post.title}>
+        <TwitterShareButton url={encodeURI(url)} title={post.title + " :: kdxu dev blog"}>
           <TwitterIcon round size={iconSize} />
         </TwitterShareButton>
-        <GooglePlusShareButton url={url}>
-          <GooglePlusIcon round size={iconSize} />
-          <GooglePlusShareCount url={url}>
-            {count => <div className="share-count">{filter(count)}</div>}
-          </GooglePlusShareCount>
-        </GooglePlusShareButton>
-        <FacebookShareButton url={url} quote={postNode.excerpt}>
-          <FacebookIcon round size={iconSize} />
-          <FacebookShareCount url={url}>
-            {count => <div className="share-count">{filter(count)}</div>}
-          </FacebookShareCount>
-        </FacebookShareButton>
-        <LinkedinShareButton
-          url={url}
-          title={post.title}
-          description={postNode.excerpt}
-        >
-          <LinkedinIcon round size={iconSize} />
-          <LinkedinShareCount url={url}>
-            {count => <div className="share-count">{filter(count)}</div>}
-          </LinkedinShareCount>
-        </LinkedinShareButton>
-        <TelegramShareButton url={url}>
-          <TelegramIcon round size={iconSize} />
-        </TelegramShareButton>
       </div>
     );
   }

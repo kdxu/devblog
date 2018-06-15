@@ -22,12 +22,13 @@
     "gatsby-remark-autolink-headers": "^1.4.11",
     "gatsby-remark-copy-linked-files": "^1.5.25",
     "gatsby-remark-images": "^1.5.36",
-    "gatsby-remark-prismjs": "^1.2.11",
+    "gatsby-remark-prismjs": "^2.0.3",
     "gatsby-remark-responsive-iframe": "^1.4.16",
     "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-remark": "^1.7.26",
+    "gatsby-transformer-remark": "^1.7.43",
     "lodash": "^4.17.4",
     "lodash-webpack-plugin": "^0.11.4",
+    "prismjs": "^1.14.0",
     "react": "^16.3.1",
     "react-disqus-comments": "^1.1.1",
     "react-dom": "^16.3.1",
@@ -37,7 +38,6 @@
     "react-twitter-widgets": "^1.7.1"
   },
   "devDependencies": {
-    "@dschau/create-gatsby-blog-post": "^1.1.0",
     "cli-glob": "^0.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -61,7 +61,7 @@
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
-    "dev": "npm run develop",
+    "start": "npm run develop",
     "serve": "gatsby serve",
     "build": "gatsby build",
     "build:pp": "gatsby build --prefix-paths",
@@ -70,8 +70,7 @@
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
-    "format:js": "prettier '**/*.{js,jsx}' --write",
-     "new": "create-post -- --date-format 'YYYY-MM-DD'"
+    "format:js": "prettier '**/*.{js,jsx}' --write"
   },
   "remarkConfig": {
     "plugins": [
