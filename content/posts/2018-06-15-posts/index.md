@@ -1,6 +1,5 @@
 ---
 title: "fish shell で環境変数を渡すメモ"
-cover: "https://unsplash.it/400/300/?random?BoldMage"
 date: "15/06/2018"
 category: "tech"
 tags:

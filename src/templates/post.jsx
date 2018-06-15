@@ -4,11 +4,9 @@ import Card from "react-md/lib/Cards";
 import CardText from "react-md/lib/Cards/CardText";
 import UserInfo from "../components/UserInfo/UserInfo";
 import PostTags from "../components/PostTags/PostTags";
-import PostCover from "../components/PostCover/PostCover";
 import PostInfo from "../components/PostInfo/PostInfo";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import PostSuggestions from "../components/PostSuggestions/PostSuggestions";
-import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.scss";
@@ -57,8 +55,6 @@ export default class PostTemplate extends React.Component {
           <title>{`${post.title} | ${config.siteTitle}`}</title>
           <link rel="canonical" href={`${config.siteUrl}${post.id}`} />
         </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <PostCover postNode={postNode} mobile={mobile} />
         <div
           className={`md-grid md-cell--9 post-page-contents mobile-fix ${postOverlapClass}`}
         >
@@ -99,7 +95,6 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        cover
         date
         category
         tags
