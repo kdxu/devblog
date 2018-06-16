@@ -13,13 +13,13 @@ class SocialLinks extends Component {
   render() {
     const { postNode, postPath, mobile } = this.props;
     const post = postNode.frontmatter;
-    const url = config.siteUrl + config.pathPrefix + postPath;
+    const url = config.siteUrl + postPath;
     const iconSize = mobile ? 36 : 48;
     const filter = count => (count > 0 ? count : "");
 
     return (
       <div className="social-links">
-        <RedditShareButton url={url} title={post.title}>
+        <RedditShareButton url={encodeURI(url)} title={post.title}>
           <RedditIcon round size={iconSize} />
           <RedditShareCount url={url}>
             {count => <div className="share-count">{filter(count)}</div>}
