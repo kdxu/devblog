@@ -1,5 +1,5 @@
 ---
-title: "gatsby でメモ帳を作って gh-pages にデプロイ＆カスタムドメインを適用するメモ"
+title: "gatsby でメモ帳を作ったメモ"
 date: "17/06/2018"
 category: "tech"
 tags:
