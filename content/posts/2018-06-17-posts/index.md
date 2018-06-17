@@ -186,9 +186,9 @@ package.jsonの `scripts` に以下の設定を追加する。
 
 ほぼAWS内で完結させた。
 
-- `ACM` でdevblog.fornothing.netの証明書を作成する。
-- `CloudFront` でkdxu.github.io/devblogとdevblog.fornothing.net（とその証明書）を紐付ける。謎にIPv6対応。
-- `Route53` でdevblog.fornothing.netのAレコードにAliasで先程設定したCloudFlareを指定する。
+- `./static/CNAME` に `devblog.fornothing.net` を配置する。
+- ACMで `devblog.fornothing.net` の証明書を作成する。
+- Route53で`devblog.fornothing.net`のCNAMEを`kdxu.github.io/devblog`に設定する。
 
 
 一通り設定反映されたら `./data/SiteConfig.js` のURLを今回指定したものに変更。
