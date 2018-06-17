@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation/Navigation";
 import config from "../../data/SiteConfig";
 import "./index.scss";
 import "./global.scss";
-require("prismjs/themes/prism-solarizedlight.css");
+require("prismjs/themes/prism-funky.css");
 
 export default class MainLayout extends React.Component {
   getLocalTitle() {

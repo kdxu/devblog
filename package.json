@@ -52,6 +52,11 @@
     "stylefmt": "^6.0.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.0.0",
+    "textlint": "^10.2.1",
+    "textlint-rule-max-ten": "^2.0.3",
+    "textlint-rule-no-mix-dearu-desumasu": "^3.0.3",
+    "textlint-rule-preset-jtf-style": "^2.3.1",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0",
     "write-good": "^0.11.3"
   },
   "keywords": [
@@ -69,6 +74,7 @@
     "clean": "rm -rf public",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
+    "lint:ja": "textlint ./content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write"
   },

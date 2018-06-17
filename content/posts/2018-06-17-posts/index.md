@@ -10,9 +10,9 @@ tags:
 
 このメモ帳サイトを構築したときのメモ。
 
-# gatsby を使う
+# gatsbyを使う
 
-今回特に強い理由はないが、`material-starter` を使った。
+今回特に強い理由はないが、material-starterを使った。
 
 [https://github.com/Vagr9K/gatsby-material-starter](https://github.com/Vagr9K/gatsby-material-starter)
 
@@ -22,7 +22,7 @@ $ gatsby new devblog https://github.com/Vagr9K/gatsby-material-starter
 $ cd ./devblog
 ```
 
-`./data/SiteConfig.js` を諸々修正。 GA など今回使わない設定を削除する。
+`./data/SiteConfig.js` を諸々修正。 GAなど今回使わない設定を削除する。
 
 ```javascript
 module.exports = {
@@ -62,28 +62,117 @@ module.exports = {
 
 `static/robots.txt` も修正しておく。
 
-これで `gatsby develop` を走らせると、localhost:8000 でサイトが立ち上がっていることが確認できる。
+これで `gatsby develop` を走らせると、localhost:8000でサイトが立ち上がっていることが確認できる。
 
+## gatsbyのUI調整
 
-## gatsby の UI 調整
-
-- 今回は cover image を使わないことにしたので、`gatsby-config.json` の `allMarkdownRemark` 等から適宜削除。
-- favicon, logo を自前のものに差し替え。
-- 日本語のタイトルの記事を出すことが多いので `src/components/SocialLinks/SocialLinks.jsx` 内の指定 url に `encodeURI()` を噛ませておく。
-- SEO components 等いらないコンポーネントを取り除いた。
+- 今回はcover imageを使わないことにしたので、`gatsby-config.json` の `allMarkdownRemark` 等から適宜削除。
+- favicon, logoを自前のものに差し替え。
+- 日本語のタイトルの記事を出すことが多いので `src/components/SocialLinks/SocialLinks.jsx` 内の指定urlに `encodeURI()` を噛ませておく。
+- SEO components等いらないコンポーネントを取り除いた。
 - コードブロックを入れ込むため `gatsby-remark-prismjs` を入れる。
-  - [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
+    - [https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
 
-## gh-pages を適用
 
-gh-pages を追加。
+## textlintの導入
+
+```sh
+$ yarn add -D textlint
+$ yarn add -D textlint-rule-max-ten textlint-rule-spellcheck-tech-word textlint-rule-no-mix-dearu-desumasu textlint-rule-preset-jtf-style # 日本語向けルールの追加
+```
+
+`.textlintrc` を追加して、
+
+```
+{
+  "rules": {
+    "max-ten": {
+      "max": 3
+    },
+    "spellcheck-tech-word": true,
+    "no-mix-dearu-desumasu": true,
+    "preset-jtf-style": true
+  }
+}
+```
+
+
+scriptsに以下の設定を追加する
+
+```javascript
+  "scripts": {
+  ...,
+    "lint:ja": "textlint  ./content/posts/",
+  }
+```
+
+そうすると
+
+```fish
+kyoko@virgo ~/p/devblog (master)> yarn lint:ja
+```
+
+を実行することで
+
+```
+yarn run v1.7.0
+$ textlint ./content/posts/
+
+/Users/kyoko/private/devblog/content/posts/2018-06-17-posts/index.md
+   13:9   ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   15:30  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   25:33  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   65:43  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   67:10  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   67:12  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   67:15  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   69:6   ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   69:18  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   70:16  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   71:74  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   71:78  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   72:17  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+   77:12  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  100:8   ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  111:12  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  113:9   ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  120:13  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  129:6   ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  129:19  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  131:16  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  133:3   ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  133:7   ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  135:10  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  135:33  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  136:17  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  136:40  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  136:42  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  136:65  ✓ error  かっこの外側、内側ともにスペースを入れません。              preset-jtf-style/3.3.かっこ類と隣接する文字の間のスペースの有無
+  137:14  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+  137:37  ✓ error  原則として、全角文字と半角文字の間にスペースを入れません。  preset-jtf-style/3.1.1.全角文字と半角文字の間
+
+✖ 31 problems (31 errors, 0 warnings)
+✓ 31 fixable problems.
+Try to run: $ textlint --fix [file]
+
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+```
+
+文章のチェックを行うことができる。
+
+
+## gh-pagesを適用
+
+gh-pagesを追加。
 
 ```sh
 $ yarn add -D gh-pages
 ```
 
 
-package.json の `scripts` に以下の設定を追加する。
+package.jsonの `scripts` に以下の設定を追加する。
+
 ```js
   "scripts": {
   ...,
@@ -91,18 +180,17 @@ package.json の `scripts` に以下の設定を追加する。
   }
 ```
 
-これで以後 github pages に `yarn build:gh` コマンド一発でデプロイできるようになった。
+これで以後GitHub pagesに `yarn build:gh` コマンド一発でデプロイできるようになった。
 
-# Custom Domain の設定
+# Custom Domainの設定
 
-ほぼ AWS 内で完結させた。
+ほぼAWS内で完結させた。
 
-- `ACM` で devblog.fornothing.net の証明書を作成する。
-- `CloudFront` で kdxu.github.io/devblog と devblog.fornothing.net （とその証明書）を紐付ける。謎にIPv6対応。
-- `Route53` で devblog.fornothing.net のAレコードにAliasで先程設定したCloudFlareを指定する。
+- `ACM` でdevblog.fornothing.netの証明書を作成する。
+- `CloudFront` でkdxu.github.io/devblogとdevblog.fornothing.net（とその証明書）を紐付ける。謎にIPv6対応。
+- `Route53` でdevblog.fornothing.netのAレコードにAliasで先程設定したCloudFlareを指定する。
 
 
 一通り設定反映されたら `./data/SiteConfig.js` のURLを今回指定したものに変更。
+
 これで無事 `devblog.fornothing.net` にメモ帳を公開することができた。
-
-
