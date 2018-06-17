@@ -2,7 +2,7 @@ const config = require("./data/SiteConfig");
 
 const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
 
-const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/
+const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/;
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -28,11 +28,11 @@ module.exports = {
             options: {
               classPrefix: "language-",
               inlineCodeMarker: null,
-              aliases: {},
-            },
-          },
-        ],
-      },
+              aliases: {}
+            }
+          }
+        ]
+      }
     },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",

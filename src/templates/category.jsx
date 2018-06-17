@@ -10,9 +10,8 @@ export default class CategoryTemplate extends React.Component {
     return (
       <div className="category-container">
         <Helmet>
-          <title>{`Posts in category "${category}" | ${
-            config.siteTitle
-          }`}
+          <title>
+            {`Posts in category "${category}" | ${config.siteTitle}`}
           </title>
           <link
             rel="canonical"

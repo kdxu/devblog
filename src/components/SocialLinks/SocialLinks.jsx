@@ -25,7 +25,10 @@ class SocialLinks extends Component {
             {count => <div className="share-count">{filter(count)}</div>}
           </RedditShareCount>
         </RedditShareButton>
-        <TwitterShareButton url={encodeURI(url)} title={post.title + " :: kdxu dev blog"}>
+        <TwitterShareButton
+          url={encodeURI(url)}
+          title={post.title + " :: kdxu dev blog"}
+        >
           <TwitterIcon round size={iconSize} />
         </TwitterShareButton>
       </div>

@@ -12,7 +12,8 @@ module.exports = {
   userName: "kdxu", // Username to display in the author segment.
   userTwitter: "kdxu", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Tokyo", // User location to display in the author segment.
-  userAvatar: "https://kdxu.fornothing.net/4aa888496036495f68a5c51dc89d3477.png", // User avatar to display in the author segment.
+  userAvatar:
+    "https://kdxu.fornothing.net/4aa888496036495f68a5c51dc89d3477.png", // User avatar to display in the author segment.
   userDescription: "fixme", // User description to display in the author segment
   userLinks: [
     {
