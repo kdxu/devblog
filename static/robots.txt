@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */tags/
 Disallow: */categories/
 
-sitemap: https://kdxu.github.io/devblog/sitemap.xml
+sitemap: https://devblog.fornothing.net/sitemap.xml
