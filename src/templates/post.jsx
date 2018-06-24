@@ -6,7 +6,6 @@ import UserInfo from "../components/UserInfo/UserInfo";
 import PostTags from "../components/PostTags/PostTags";
 import PostInfo from "../components/PostInfo/PostInfo";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
-import PostSuggestions from "../components/PostSuggestions/PostSuggestions";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.scss";
@@ -79,8 +78,6 @@ export default class PostTemplate extends React.Component {
             expanded={expanded}
           />
         </div>
-
-        <PostSuggestions postNode={postNode} />
       </div>
     );
   }

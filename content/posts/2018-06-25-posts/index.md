@@ -417,5 +417,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ```
 
 foobarだけキー数が少ないのもあり少し特殊な構成。スペースがデフォルトレイヤーにないのはちょい辛い。
+
 tap_danceは超便利（特にカッコ周り）。
+
 vimmerとしてはvim layerを作るとささっと `esc` -> `:xx` -> `ent` の入力ができてとても良い。 
