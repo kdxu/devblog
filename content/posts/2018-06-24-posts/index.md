@@ -6,17 +6,17 @@ tags:
     - ocaml
 ---
 
-OCaml の復習をしようと思う。
+OCamlの復習をしようと思う。
 
 # セットアップ
 
-環境は macOS + neovim。
-windows でやる気力は流石に無い。
+環境はmacOS + neovim。
+Windowsでやる気力は流石に無い。
 
-## OCaml, opam を入れる
+## OCaml, opamを入れる
 
-homebrew で入る。Graphicsを使いたいので`--with-x11` オプションを付ける。
-xquartz が無いと怒られたので、入れる。
+homebrewで入る。Graphicsを使いたいので`--with-x11` オプションを付ける。
+xquartzが無いと怒られたので、入れる。
 
 ```shell-session
 $ brew install ocaml --with-x11
@@ -31,24 +31,24 @@ $ brew install opam
 $ opam init
 ```
 
-自分は fish shell を使っているので、`~/.config/fish/config.fish` に以下の様に設定する。
+自分はfish shellを使っているので、`~/.config/fish/config.fish` に以下の様に設定する。
 
 ```fish
 # opam
 eval (direnv hook fish)
 ```
 
-## rlwrap を入れる
+## rlwrapを入れる
 
 そのままの `ocaml` だと対話環境下で矢印キーで移動できない。
 
-[rlwrap](https://github.com/hanslub42/rlwrap) というGNU readline の wrapper があるのでそれを使う。
+[rlwrap](https://github.com/hanslub42/rlwrap) というGNU readlineのwrapperがあるのでそれを使う。
 
 ```shell-session
 $ brew install rlwrap
 $ echo "alias ocaml='rlwrap ocaml'" > ~/.config/fish/init.vim
 ```
-## utop を入れる
+## utopを入れる
 
 [utop](https://github.com/diml/utop) 今ナウいOCamlのREPLらしい。
 
@@ -56,7 +56,7 @@ $ echo "alias ocaml='rlwrap ocaml'" > ~/.config/fish/init.vim
 $ opam install utop
 ```
 
-## Vim の環境を整える
+## Vimの環境を整える
 
 まず [merlin](http://the-lambda-church.github.io/merlin/) と [ocp-indent](http://www.typerex.org/ocp-indent.html) を入れる。
 
