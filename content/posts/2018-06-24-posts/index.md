@@ -58,7 +58,7 @@ $ opam install utop
 
 ## Vimの環境を整える
 
-まず [merlin](http://the-lambda-church.github.io/merlin/) と [ocp-indent](http://www.typerex.org/ocp-indent.html) を入れる。
+まず [merlin](https://github.com/ocaml/merlin) と [ocp-indent](http://www.typerex.org/ocp-indent.html) を入れる。
 
 
 ```shell-session
@@ -69,11 +69,10 @@ $ opam install ocp-indent
 自分はシンタックスチェックツールとして [syntastic](https://github.com/scrooloose/syntastic) を使っているので、`merlin` をシンタックスチェッカーとして呼ぶように以下の設定をする。
 
 ```vim
+
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute 'set rtp+=' . g:opamshare . '/merlin/vim'
-
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
 let g:syntastic_ocaml_checkers = ['merlin']
-
 execute 'set rtp^=' . g:opamshare . '/ocp-indent/vim'
 ```
 
