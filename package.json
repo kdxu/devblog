@@ -27,6 +27,7 @@
     "gatsby-plugin-google-analytics": "2.0.5",
     "gatsby-plugin-lodash": "3.0.1",
     "gatsby-plugin-manifest": "2.0.2",
+    "gatsby-plugin-netlify-cms": "3.0.0",
     "gatsby-plugin-nprogress": "2.0.5",
     "gatsby-plugin-offline": "2.0.5",
     "gatsby-plugin-react-helmet": "3.0.0",
@@ -54,7 +55,8 @@
     "react-md": "^1.2.9",
     "react-share": "^2.1.0",
     "react-twitter-widgets": "^1.7.1",
-    "url-join": "^4.0.0"
+    "url-join": "^4.0.0",
+    "netlify-cms": "2.1.1"
   },
   "devDependencies": {
     "cli-glob": "^0.1.0",
