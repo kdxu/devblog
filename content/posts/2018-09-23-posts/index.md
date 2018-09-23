@@ -1,0 +1,20 @@
+---
+title: "libwebrtc のパッチ: localhost における desired ips との不一致を許容する"
+date: "23/09/2018"
+category: "tech"
+tags:
+    - webrtc
+    - webkit
+---
+
+
+# 概要
+
+`p2p/base/tcpport.cc` に2 日前に入ったパッチ。
+要は tcp connection のソケットアドレス解決をしたときに
+loopback IP(localhost) の場合は `Network::GetIPs()` ので指定されたものでなくとも許容するという変更。
+
+
+[bugzilla](https://bugs.webkit.org/show_bug.cgi?id=189828)
+[コード変更](https://bugs.webkit.org/attachment.cgi?id=350353&action=review)
+
