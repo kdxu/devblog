@@ -35,12 +35,13 @@ module.exports = {
       }
     },
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-lodash",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/${config.blogPostDir}`
+        path: `${__dirname}/content/`
       }
     },
     {
