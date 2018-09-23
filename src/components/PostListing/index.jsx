@@ -1,5 +1,5 @@
 import React from "react";
-import PostPreview from "../PostPreview/PostPreview";
+import PostPreview from "../PostPreview";
 
 class PostListing extends React.Component {
   getPostList() {
@@ -9,7 +9,7 @@ class PostListing extends React.Component {
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
         title: postEdge.node.frontmatter.title,
-        date: postEdge.node.frontmatter.date,
+        date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead
       });

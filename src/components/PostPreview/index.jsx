@@ -5,9 +5,11 @@ import Button from "react-md/lib/Buttons";
 import Avatar from "react-md/lib/Avatars";
 import CardText from "react-md/lib/Cards/CardText";
 import FontIcon from "react-md/lib/FontIcons";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
+import moment from "moment";
 import Media, { MediaOverlay } from "react-md/lib/Media";
-import PostTags from "../PostTags/PostTags";
+import PostTags from "../PostTags";
+import config from "../../../data/SiteConfig";
 import "./PostPreview.scss";
 
 class PostPreview extends Component {
@@ -39,19 +41,16 @@ class PostPreview extends Component {
     const { mobile } = this.state;
     const expand = mobile;
     /* eslint no-undef: "off" */
-    const coverHeight = 100;
+    const coverHeight = mobile ? 61 : 125;
     return (
       <Card key={postInfo.path} raise className="md-grid md-cell md-cell--12">
         <Link style={{ textDecoration: "none" }} to={postInfo.path}>
-          <Media
-            style={{
-              background: `black`,
-              height: `${coverHeight}px`
-            }}
-            className="post-preview-cover"
-          >
+          <Media style={{ height: coverHeight, paddingBottom: "0px" }}>
             <MediaOverlay>
               <CardTitle title={postInfo.title}>
+                <Button raised secondary className="md-cell--right">
+                  Read
+                </Button>
               </CardTitle>
             </MediaOverlay>
           </Media>
@@ -59,7 +58,9 @@ class PostPreview extends Component {
         <CardTitle
           expander={expand}
           avatar={<Avatar icon={<FontIcon iconClassName="fa fa-calendar" />} />}
-          title={`Published on ${postInfo.date}`}
+          title={`Published on ${moment(postInfo.date).format(
+            config.dateFormat
+          )}`}
           subtitle={`${postInfo.timeToRead} min read`}
         />
 
