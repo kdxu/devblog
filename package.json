@@ -42,7 +42,7 @@
     "gatsby-source-filesystem": "2.0.1",
     "gatsby-transformer-remark": "2.1.1",
     "gatsby-transformer-sharp": "2.1.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "moment": "^2.22.2",
     "netlify-cms": "2.1.1",
     "node-sass": "^4.9.2",
